@@ -1,0 +1,3 @@
+alldisks.x
+*.o
+cmake-build-*
