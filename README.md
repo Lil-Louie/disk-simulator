@@ -1,31 +1,46 @@
-DiskSim — Disk Scheduling Simulator in C++
+# DiskSim — Disk Scheduling Simulator in C++
 
-A modular, event-driven disk scheduling simulator implementing and comparing five classic disk I/O scheduling algorithms:
+A modular, event-driven disk scheduling simulator written in C++. It implements and compares five classic disk I/O scheduling algorithms:
 
-FCFS — First-Come, First-Served
-ST — Same Track Clustering
-Pick-Up — Greedy track-based optimization
-LOOK — Optimized SCAN (skips empty tracks)
-C-LOOK — Circular LOOK, fairer version of LOOK
-Features
+- **FCFS** — First-Come, First-Served  
+- **ST** — Same Track Clustering  
+- **Pick-Up** — Greedy track-based optimization  
+- **LOOK** — Optimized SCAN (skips empty tracks)  
+- **C-LOOK** — Circular LOOK, a fairer version of LOOK  
 
-Event-driven simulation using custom TimerEvent and DiskDoneEvent classes
-Real-time queue tracking and performance statistics:
-Min/Max/Average queue lengths
-Total requests completed
-Clean OOP design using C++17
-Easy to extend and test with custom input files
-Build Instructions
+---
 
-Requirements
-C++17 compatible compiler (g++, clang++)
-Make (or compile manually)
-Build and Run
+## Features
+
+- Event-driven architecture using custom `TimerEvent` and `DiskDoneEvent` classes  
+- Real-time queue tracking and statistics:
+  - Total requests completed  
+  - Minimum, maximum, and average queue lengths  
+- Clean object-oriented design using modern C++ (C++17)  
+- Modular and extensible structure for testing new algorithms  
+
+---
+
+## Build Instructions
+
+### Requirements
+
+- A C++17-compatible compiler (`g++`, `clang++`, etc.)  
+- `make` (optional but recommended)  
+
+### Build and Run
+
+To compile the simulator:
+
+```bash
+make alldisks.x
+
 # Compile using Makefile
 make alldisks.x
 
-# Run simulation with input file
+To run the simulation using an input request file:
 ./alldisks.x inputRequests.txt
+
 Sample Output
 
 ========== FINAL DISK STATS ==========
@@ -43,7 +58,7 @@ Sample Output
   Avg Queue Length: 1.20
 
 ...
-📂 Project Structure
+Project Structure
 
 DiskSim/
 ├── CommonFiles/         # Shared data types and request logic
@@ -56,7 +71,7 @@ DiskSim/
 ├── inputRequests.txt    # Sample input
 ├── main.cpp             # Entry point
 ├── Makefile
-💡 Notes
+ Notes
 
 Input file format: arrival_time track sector
 Designed for learning purposes and academic simulation of disk scheduling algorithms
